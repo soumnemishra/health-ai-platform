@@ -1,0 +1,29 @@
+{
+  "name": "health-ai-platform",
+  "version": "1.0.0",
+  "description": "Health AI Platform - Multi-service architecture for healthcare AI applications",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "docker-compose up",
+    "dev:build": "docker-compose up --build",
+    "dev:down": "docker-compose down",
+    "test": "npm run test --workspaces",
+    "lint": "npm run lint --workspaces",
+    "setup": "node scripts/setup.js"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.0",
+    "eslint": "^8.50.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "author": "",
+  "license": "MIT"
+}
+

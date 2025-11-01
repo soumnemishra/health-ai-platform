@@ -1,0 +1,28 @@
+# Thresholds and Weights Configuration
+
+# Relevance scoring weights
+scoring:
+  citation_weight: 0.3
+  recency_weight: 0.3
+  keyword_match_weight: 0.4
+  minimum_score: 0.4
+
+# Quality thresholds
+quality:
+  min_abstract_length: 100
+  min_title_length: 10
+  min_citation_count: 0
+  require_open_access: false
+
+# Indexing thresholds
+indexing:
+  min_text_length: 50
+  skip_duplicates: true
+  similarity_threshold: 0.95
+
+# Processing thresholds
+processing:
+  max_text_length: 10000
+  min_keyword_count: 3
+  max_authors: 50
+

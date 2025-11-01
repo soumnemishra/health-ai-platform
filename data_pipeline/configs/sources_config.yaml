@@ -1,0 +1,29 @@
+# Data Sources Configuration
+
+pubmed:
+  base_url: "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
+  api_key: ${PUBMED_API_KEY}
+  rate_limit:
+    requests_per_second: 3
+    burst_size: 10
+  default_query: "healthcare OR medical OR clinical"
+  date_range_days: 1
+
+openalex:
+  base_url: "https://api.openalex.org"
+  rate_limit:
+    requests_per_second: 1
+    burst_size: 5
+  default_filters:
+    concepts.display_name: "Medicine"
+    is_oa: true
+  max_per_page: 200
+
+arxiv:
+  base_url: "https://export.arxiv.org/api/query"
+  rate_limit:
+    requests_per_second: 1
+    burst_size: 3
+  default_query: "cat:cs.CL OR cat:q-bio"
+  date_range_days: 7
+

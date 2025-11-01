@@ -1,0 +1,54 @@
+# Pipeline Configuration
+
+# Data sources
+sources:
+  pubmed:
+    enabled: true
+    api_key: ${PUBMED_API_KEY}
+    max_results_per_run: 1000
+    query: "healthcare OR medical OR clinical"
+    update_frequency: "daily"
+  
+  openalex:
+    enabled: true
+    max_results_per_run: 500
+    filters:
+      concepts.display_name: "Medicine"
+      is_oa: true
+    update_frequency: "daily"
+
+# Processing settings
+processing:
+  batch_size: 100
+  extract_text: true
+  extract_metadata: true
+  extract_keywords: true
+  calculate_scores: true
+
+# Indexing settings
+indexing:
+  model_name: "sentence-transformers/all-MiniLM-L6-v2"
+  batch_size: 50
+  dimension: 384
+  index_path: "models/faiss_index.bin"
+  update_existing: true
+
+# Database settings
+database:
+  connection_string: ${DATABASE_URL}
+  batch_size: 1000
+  timeout: 30
+
+# Retry settings
+retry:
+  max_retries: 3
+  retry_delay_seconds: 300
+  exponential_backoff: true
+
+# Logging
+logging:
+  level: "INFO"
+  file: "logs/pipeline.log"
+  rotation: "10 MB"
+  retention: "30 days"
+
