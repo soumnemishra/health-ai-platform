@@ -1,0 +1,119 @@
+Overall Idea and Approach from Files and Discussion
+Problem Addressed:
+Physicians struggle to keep up with fast-growing, complex, and diverse medical literature across specialties (oncology, cardiology, neurology, etc.).
+The complexity involves filtering relevant journals, understanding academic vs layman perspectives, and timely receiving high-impact updates.
+
+Proposed Solution:
+
+An AI-powered alert system that delivers filtered, specialty-wise journal updates.
+
+Each journal update includes:
+
+An academic summary (detailed, clinician-focused)
+
+A layman summary (easy to understand)
+
+A mixed overview (eye-catching, quick insight)
+
+User can click for more insights or listen/watch multimedia summaries (podcast, video snippet).
+
+Researcher profiles with rankings at global, country, state, city, and department levels based on contributions.
+
+AI-driven personalized recommendations to help researchers improve ranking and support paper writing.
+
+Integration with open research APIs like OpenAlex for automated data ingestion and profile management with manual correction options.
+
+Technical Components (as per your .txt file):
+
+Retrieval-augmented generation (RAG) architecture for evidence retrieval combined with natural language generation.
+
+Multi-agent AI framework that breaks down user queries and aggregates results.
+
+Clarification layer to ask additional patient-specific or context questions to improve answers.
+
+Reference highlighting to enable citations linking directly to relevant journal sections.
+
+Integration with databases like PubMed, OpenAlex, and custom indexing using vector databases for semantic search.
+
+Daily ingestion pipelines to keep repository updated with new publications.
+
+User interface features for alerts, detailed article views, researcher profiles, and gamification components.
+
+From the .md file (Web of Medicine AI User Flows):
+
+Detailed user flows for the application including search, filtering by specialization, detailed research card display with multiple summary tabs.
+
+Researcher profile flows including scoring/ranking dashboards, personalized improvement checklists, and monetization pathways.
+
+Backend ETL pipelines handle data extraction, filtering using evidence quality, update schedules, scoring components, and rankings.
+
+API design covering specialized search, article detail retrieval, user profile handling, and scoring engines.
+
+Frontend components with accessible, searchable UI optimized for usability by clinicians and researchers.
+
+What You Can Contribute as an AI and ML Engineer
+AI Model Design and Development:
+
+Design and fine-tune language models (LLMs) specialized for medical summarization for academic, layman, and blended summaries.
+
+Build the retrieval-augmented generation pipeline for accurate evidence retrieval with transparent citations.
+
+Develop multi-agent AI systems for complex query decomposition, clarification asking, and evidence synthesis.
+
+Implement personalized recommendation systems for researcher ranking improvements and support in paper writing (e.g., suggesting relevant citations, improving language).
+
+Data Pipeline and Integration:
+
+Build and optimize data ingestion pipelines from OpenAlex, PubMed APIs, and other sources for nightly or daily updates.
+
+Create vector embeddings and indexing for efficient semantic search and filtering by specialty, evidence quality, publication date.
+
+Researcher Profile and Scoring Algorithms:
+
+Develop algorithms for scoring and ranking researchers across various granularity levels (global/state/institution/specialty).
+
+Use AI to generate personalized actionable insights, checklists, and gamification features to motivate researchers.
+
+User Interaction and Explanation:
+
+Implement AI layers that generate multi-level patient- and clinician-friendly explanations, including interactive question asking to clarify contexts (clarification layer).
+
+Enable transparency and auditability by linking outputs to exact journal text with clickable highlights.
+
+Tooling and Repositories:
+
+Use notebook-based environments for experimentation with models and data exploration (e.g., fine-tuning models, interactive querying).
+
+Organize code repositories and write clear documentation for collaborative development and deployment pipelines.
+
+Collaboration With Domain Experts:
+
+Work closely with clinicians and researchers to iteratively validate summaries, AI recommendations, and ranking logic performance.
+
+Incorporate expert feedback into training data refinement and model enhancements.
+
+What the Files Provide and How They Fit Together
+The .txt file provides detailed research and architectural notes, improvement ideas inspired by Vera Health AI and other systems, with example implementation prompts and system design at a deep technical level. It contains conceptual and engineering plans, including sample prompts for code generation tools, interaction design, and enhancements like reference highlighting and clarification layers.
+
+The .md file concretely lays out user flows, backend and frontend architecture, data model designs, ETL pipelines, API surface, and scoring logic for researcher gamification—essentially a full product and engineering specification for an MVP or production system.
+
+Together, these files form a blueprint for your doctor’s vision: a comprehensive AI-powered medical research alert and profiling system with strong user experience, transparency, dynamic interactive AI, and robust backend integration.
+
+Summary
+The idea is to develop a next-generation clinical and medical research alert system that:
+
+Filters and streams up-to-date medical research journal content by specialty
+
+Generates multi-level summaries (academic, layman, blended) and multimedia content
+
+Maintains dynamic researcher profiles with rankings and AI-driven improvement guidance
+
+Integrates through APIs like OpenAlex and PubMed for data ingestion and updating
+
+Uses retrieval-augmented generation and multi-agent AI for semantic search and question clarification
+
+Provides transparency with citation linking and source text highlighting
+
+Supports clinician-friendly UI and research gamification features
+
+As an AI/ML engineer, you bring critical expertise in language model development, semantic search, AI multi-agent orchestration, recommendation systems, and ML-driven scoring. You can drive the technical design, model training, pipeline automation, and interactive AI features alongside clinicians and developers to bring this vision to reality.
