@@ -11,6 +11,7 @@ import authRoutes from './api/routes/auth.routes.js'
 import userRoutes from './api/routes/user.routes.js'
 import paperRoutes from './api/routes/paper.routes.js'
 import alertRoutes from './api/routes/alert.routes.js'
+import articlesRoutes from './api/routes/articles.js'
 
 const app = express()
 
@@ -33,7 +34,9 @@ app.use(express.json({ limit: '10mb' }))
 app.use(express.urlencoded({ extended: true, limit: '10mb' }))
 
 // Database connection
-connectDB()
+if (process.env.MONGO_URI || process.env.MONGODB_URI) {
+  connectDB()
+}
 
 // Health check
 app.get('/health', (req, res) => {
@@ -45,6 +48,7 @@ app.use('/api/auth', authRoutes)
 app.use('/api/users', userRoutes)
 app.use('/api/papers', paperRoutes)
 app.use('/api/alerts', alertRoutes)
+app.use('/api/articles', articlesRoutes)
 
 // 404 handler
 app.use((req, res) => {
