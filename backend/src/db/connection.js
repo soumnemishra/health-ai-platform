@@ -2,15 +2,23 @@ import mongoose from 'mongoose'
 import { logger } from '../utils/logger.js'
 
 export const connectDB = async () => {
+  // Check if MONGO_URI or MONGODB_URI is provided
+  const mongoUri = process.env.MONGO_URI || process.env.MONGODB_URI
+  
+  if (!mongoUri) {
+    logger.info('Mongo URI not provided, skipping Mongo connection')
+    return
+  }
+
   try {
-    const conn = await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/health_ai', {
+    const conn = await mongoose.connect(mongoUri, {
       // MongoDB connection options
     })
 
     logger.info(`MongoDB Connected: ${conn.connection.host}`)
   } catch (error) {
     logger.error(`MongoDB connection error: ${error.message}`)
-    process.exit(1)
+    // Don't exit the process - let the HTTP server keep running
   }
 }
 
