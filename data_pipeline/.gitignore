@@ -48,6 +48,7 @@ data/processed/
 # Environment
 .env
 .env.local
+*.env
 
 # IDE
 .vscode/
